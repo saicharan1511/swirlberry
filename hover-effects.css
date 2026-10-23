@@ -1,0 +1,97 @@
+:root {
+    --hover-color: #087f83;
+}
+
+@media screen {
+    .hero,
+    .premium-hero,
+    .about-hero,
+    .contact-hero,
+    .menu-hero,
+    .offers-hero,
+    .party-hero {
+        min-block-size: calc(100vh - var(--header-height, 77px));
+        min-block-size: calc(100svh - var(--header-height, 77px));
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    html {
+        scroll-snap-type: y proximity;
+    }
+
+    .hero + section,
+    .premium-hero + section,
+    .about-hero + section,
+    .contact-hero + section,
+    .menu-hero + section,
+    .offers-hero + section,
+    .party-hero + section {
+        scroll-snap-align: start;
+    }
+}
+
+.site-header .order-button {
+    background-color: var(--secondary, #087f83);
+    border-color: var(--secondary, #087f83);
+    color: #fff;
+}
+
+.button-primary:hover,
+.button-outline:hover,
+.site-header .button-primary:hover,
+.site-footer .footer-newsletter button:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+    color: #fff;
+}
+
+.site-header .order-button:hover {
+    background-color: var(--primary, #d93675);
+    border-color: var(--primary, #d93675);
+    color: #fff;
+}
+
+.site-header .nav-list > li > a,
+.site-header .nav-list summary {
+    position: relative;
+}
+
+.site-header .nav-list > li > a::after,
+.site-header .nav-list summary::after {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 2px;
+    block-size: 2px;
+    border-radius: 99px;
+    background: var(--primary, #d93675);
+    content: "";
+    transform: scaleX(0);
+    transition: transform .2s;
+}
+
+.site-header .nav-list > li > a:hover,
+.site-header .nav-list summary:hover {
+    color: var(--primary, #d93675);
+}
+
+.site-header .nav-list > li > a:hover::after,
+.site-header .nav-list summary:hover::after,
+.site-header .nav-list > li > a.active::after,
+.site-header .nav-list summary.active::after {
+    transform: scaleX(1);
+}
+
+.site-header .nav-list > li > a.active::after,
+.site-header .nav-list summary.active::after {
+    background: var(--primary, #d93675);
+}
+
+.site-header .nav-list .active {
+    border-bottom: 0;
+}
+
+.site-header .dropdown a:hover,
+.site-header .dropdown a[aria-current] {
+    color: var(--primary, #d93675);
+}

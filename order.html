@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Order Now | Swirlberry</title>
+
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="hover-effects.css">
+    <script src="order.js" defer></script>
+</head>
+
+<body>
+    <!-- TOP-RIGHT CONTROLS -->
+    <div class="utilities" aria-label="Display settings">
+        <button class="utility" id="themeToggle" type="button" aria-label="Switch to dark mode"
+            title="Switch to dark mode" hidden>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10Z" />
+            </svg>
+        </button>
+
+        <button class="utility" id="directionToggle" type="button"
+            aria-label="Switch to right-to-left layout" title="Switch to right-to-left layout" hidden>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 7h18m-4-4 4 4-4 4M21 17H3m4-4-4 4 4 4" />
+            </svg>
+        </button>
+    </div>
+
+    <main>
+        <div class="order-top">
+            <a class="brand" href="index.html" aria-label="Swirlberry home">
+                <img id="brandLogo" src="swirlberry-logo.png" alt="" width="62" height="62">
+
+                <span>
+                    Swirlberry
+                    <small>ICE CREAM &amp; DESSERTS</small>
+                </span>
+            </a>
+
+        </div>
+
+        <div class="intro">
+            <p class="eyebrow">YOUR NEXT SWEET MOMENT</p>
+
+            <h1>
+                A little scoop.<br>
+                <em>A lot of happy.</em>
+            </h1>
+
+            <p>Pick your favorites. Make it a sweet occasion.</p>
+        </div>
+
+        <div class="layout">
+            <section class="catalog" aria-labelledby="menuTitle">
+                <div class="section-title">
+                    <h2 id="menuTitle">Choose your treats</h2>
+                    <span>Freshly crafted favorites</span>
+                </div>
+
+                <div id="products" class="products"></div>
+
+                <noscript>
+                    Please enable JavaScript to build your order.
+                </noscript>
+            </section>
+
+            <aside class="panel" aria-labelledby="bagTitle">
+                <p class="eyebrow">MADE FOR YOUR CRAVINGS</p>
+
+                <h2 id="bagTitle">Your sweet bag</h2>
+
+                <div id="cart"></div>
+
+                <div class="total">
+                    <span>Total</span>
+                    <strong id="total" aria-live="polite">₹0</strong>
+                </div>
+
+                <form id="orderForm">
+                    <fieldset>
+                        <legend>How would you like it?</legend>
+
+                        <label class="radio">
+                            <input type="radio" name="fulfilment" value="pickup" checked>
+                            Pickup
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="fulfilment" value="delivery">
+                            Delivery
+                        </label>
+                    </fieldset>
+
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" autocomplete="name" maxlength="80" required>
+
+                    <label for="phone">Phone number</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel" pattern="[\d\x20\x28\x29\x2B\x2D]{7,20}"
+                        maxlength="20" required>
+
+                    <div id="addressGroup" hidden>
+                        <label for="address">Delivery address</label>
+
+                        <textarea id="address" name="address" autocomplete="street-address" maxlength="400"
+                            disabled></textarea>
+                    </div>
+
+                    <label for="notes">
+                        Special requests <span>(optional)</span>
+                    </label>
+
+                    <textarea id="notes" name="notes" maxlength="400"
+                        placeholder="Any preferences for your treats?"></textarea>
+
+                    <p class="note">
+                        Sample menu and prices. Preview your order here;
+                        online ordering and payment are not connected.
+                    </p>
+
+                    <button class="primary" id="reviewButton" type="submit" disabled>
+                        Preview order
+                    </button>
+
+                    <p id="message" role="status"></p>
+                </form>
+            </aside>
+        </div>
+
+        <dialog id="reviewDialog" aria-labelledby="reviewTitle">
+            <h2 id="reviewTitle">Your order preview</h2>
+
+            <p id="reviewText"></p>
+
+            <p class="note">
+                This preview has not been sent to Swirlberry.
+                No payment has been taken.
+            </p>
+
+            <button id="closeDialog" class="primary" type="button">
+                Continue editing
+            </button>
+        </dialog>
+    </main>
+</body>
+
+</html>

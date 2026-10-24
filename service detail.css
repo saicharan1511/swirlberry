@@ -403,17 +403,6 @@ summary::-webkit-details-marker {
 
 .story-image {
     position: relative;
-    padding-inline-end: 25px;
-    padding-bottom: 25px;
-}
-
-.story-image::before {
-    position: absolute;
-    inset: 25px 0 0 25px;
-    z-index: -1;
-    border: 1px solid var(--secondary);
-    border-radius: 25px;
-    content: "";
 }
 
 .story-image img {
@@ -423,8 +412,8 @@ summary::-webkit-details-marker {
 }
 
 .story-image img.artisan-experience-image {
-    object-fit: contain;
-    background: var(--bg-alt);
+    object-fit: cover;
+    object-position: center;
 }
 
 .story-copy h2,

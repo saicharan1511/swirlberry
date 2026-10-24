@@ -795,7 +795,7 @@ details {
     border: 1px solid var(--border);
     border-radius: 25px;
     background: var(--surface);
-    transition: box-shadow .35s, transform .35s;
+    transition: box-shadow .35s, transform .35s, border-color .35s;
 }
 
 .bundle-card>img {
@@ -916,7 +916,7 @@ details {
     padding: 34px;
     border-radius: 24px;
     background: var(--surface);
-    transition: background .3s, transform .3s, box-shadow .3s;
+    transition: background .3s, transform .3s, box-shadow .3s, border-color .3s;
 }
 
 .guide-symbol {
@@ -1388,6 +1388,11 @@ address a {
         border-color: var(--primary);
     }
 
+    .bundle-card:hover,
+    .guide-card:hover {
+        border-color: var(--primary);
+    }
+
     .deal-card:hover img {
         transform: scale(1.06);
     }
@@ -1848,4 +1853,39 @@ address a {
         opacity: 1;
         transform: none;
     }
+}
+
+[data-theme="dark"] .offers-hero {
+    background: #100c0f;
+}
+
+[data-theme="dark"] .offers-hero .hero-background {
+    filter: brightness(.9) saturate(.92);
+}
+
+[data-theme="dark"] .offers-hero .hero-shade {
+    background:
+        linear-gradient(90deg, rgb(10 7 10 / 82%), rgb(10 7 10 / 38%) 65%, rgb(10 7 10 / 12%)),
+        linear-gradient(0deg, rgb(10 7 10 / 65%), transparent 40%);
+}
+
+[data-theme="dark"][dir="rtl"] .offers-hero .hero-shade {
+    background:
+        linear-gradient(270deg, rgb(10 7 10 / 82%), rgb(10 7 10 / 38%) 65%, rgb(10 7 10 / 12%)),
+        linear-gradient(0deg, rgb(10 7 10 / 65%), transparent 40%);
+}
+
+[data-theme="dark"] .offers-hero .hero-heading .eyebrow,
+[data-theme="dark"] .offers-hero .hero-heading h1 em,
+[data-theme="dark"] .offers-hero .hero-menu-link:hover {
+    color: var(--primary-ink);
+}
+
+[data-theme="dark"] .offers-hero .hero-menu-link:hover {
+    border-color: var(--primary-ink);
+}
+
+[data-theme="dark"] .offers-hero .hero-seal {
+    border-color: rgb(255 145 186 / 65%);
+    background: rgb(16 12 15 / 55%);
 }

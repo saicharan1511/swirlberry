@@ -529,15 +529,20 @@ details {
 }
 
 .premium-hero h1 {
-    color: #fff;
+    color: var(--primary);
     font-weight: 500;
     line-height: 1.03;
     letter-spacing: -.055em;
 }
 
 .premium-hero h1 em {
-    color: #ffd6e6;
+    color: var(--primary);
     font-style: italic;
+}
+
+[data-theme="dark"] .premium-hero h1,
+[data-theme="dark"] .premium-hero h1 em {
+    color: var(--primary-ink);
 }
 
 .hero-description {
@@ -660,6 +665,10 @@ details {
 
 .collection-card:nth-child(2) {
     padding-block-start: 65px;
+}
+
+.collection-section .collection-card {
+    border: 0;
 }
 
 .collection-image {
@@ -823,15 +832,6 @@ details {
     border-radius: 220px 220px 30px 30px;
     box-shadow: var(--shadow);
     transition: opacity .25s, transform .6s;
-}
-
-.sundae-orbit {
-    position: absolute;
-    inset: 8px -3px;
-    border: 1px solid var(--secondary);
-    border-radius: 50%;
-    opacity: .35;
-    transform: rotate(-18deg);
 }
 
 .sundae-tag {

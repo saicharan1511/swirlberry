@@ -641,7 +641,7 @@ details {
   border: 1px solid var(--border);
   background: var(--surface);
   overflow: hidden;
-  transition: transform .35s, box-shadow .35s;
+  transition: transform .35s, box-shadow .35s, border-color .35s;
 }
 
 .product-photo {
@@ -817,16 +817,7 @@ details {
 }
 
 .waffle-photo {
-  padding: 20px;
-}
-
-.waffle-photo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--primary);
-  border-radius: 25px 150px 25px 25px;
-  transform: rotate(4deg);
+  padding: 0;
 }
 
 .waffle-photo img {
@@ -882,16 +873,19 @@ details {
 
 .sundae-card {
   min-inline-size: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background: var(--surface);
 }
 
 .sundae-card:nth-child(2) {
-  padding-block-start: 65px;
+  margin-block-start: 65px;
 }
 
 .sundae-image {
   position: relative;
   overflow: hidden;
-  border-radius: 26px;
 }
 
 .sundae-image img {
@@ -915,7 +909,7 @@ details {
 }
 
 .sundae-copy {
-  padding: 27px 8px 0;
+  padding: 24px;
 }
 
 .sundae-copy .eyebrow {
@@ -960,12 +954,16 @@ details {
 
 .cake-card {
   min-inline-size: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  transition: transform .35s, box-shadow .35s, border-color .35s;
 }
 
 .cake-image {
   position: relative;
   overflow: hidden;
-  border-radius: 22px;
 }
 
 .cake-image img {
@@ -996,7 +994,7 @@ details {
 }
 
 .cake-copy {
-  padding-block-start: 23px;
+  padding: 22px 24px 24px;
 }
 
 .cake-copy h3 {
@@ -1521,6 +1519,13 @@ address a {
 @media (hover: hover) {
   .product-card:hover {
     transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+  }
+
+  .cake-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
     box-shadow: var(--shadow);
   }
 
@@ -1874,15 +1879,11 @@ address a {
   }
 
   .sundae-card:nth-child(2) {
-    padding-block-start: 0;
+    margin-block-start: 0;
   }
 
   .sundae-image img {
     block-size: 380px;
-  }
-
-  .waffle-photo {
-    padding: 15px;
   }
 
   .waffle-seal {
@@ -2047,4 +2048,38 @@ address a {
     opacity: 1;
     transform: none;
   }
+}
+
+[data-theme="dark"] .menu-hero {
+  background: #100c0f;
+}
+
+[data-theme="dark"] .menu-hero .hero-background {
+  filter: brightness(.78) saturate(.85);
+}
+
+[data-theme="dark"] .menu-hero .hero-shade {
+  background:
+    linear-gradient(90deg, rgb(10 7 10 / 94%), rgb(10 7 10 / 62%) 65%, rgb(10 7 10 / 34%)),
+    linear-gradient(0deg, rgb(10 7 10 / 88%), transparent 45%);
+}
+
+[data-theme="dark"][dir="rtl"] .menu-hero .hero-shade {
+  background:
+    linear-gradient(270deg, rgb(10 7 10 / 94%), rgb(10 7 10 / 62%) 65%, rgb(10 7 10 / 34%)),
+    linear-gradient(0deg, rgb(10 7 10 / 88%), transparent 45%);
+}
+
+[data-theme="dark"] .menu-hero .hero-outline {
+  border-color: rgb(255 145 186 / 35%);
+}
+
+[data-theme="dark"] .menu-hero .hero-kicker,
+[data-theme="dark"] .menu-hero h1 em,
+[data-theme="dark"] .menu-hero .hero-text-link:hover {
+  color: var(--primary-ink);
+}
+
+[data-theme="dark"] .menu-hero .hero-text-link:hover {
+  border-color: var(--primary-ink);
 }

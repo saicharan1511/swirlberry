@@ -32,8 +32,8 @@
 }
 
 .site-header .order-button {
-    background-color: var(--secondary, #087f83);
-    border-color: var(--secondary, #087f83);
+    background-color: var(--primary, #d93675);
+    border-color: var(--primary, #d93675);
     color: #fff;
 }
 
@@ -47,9 +47,40 @@
 }
 
 .site-header .order-button:hover {
-    background-color: var(--primary, #d93675);
-    border-color: var(--primary, #d93675);
+    background-color: var(--secondary, #087f83);
+    border-color: var(--secondary, #087f83);
     color: #fff;
+}
+
+main section h2:not(.final-panel h2):not(.cta-card h2),
+main section h2:not(.final-panel h2):not(.cta-card h2) em {
+    color: var(--primary, #d93675);
+}
+
+.flavor-card,
+.category-card,
+.offer-card,
+.review-card,
+.service-card,
+.value-card,
+.creation-card,
+.people-card,
+.contact-card,
+.location-card,
+.collection-card,
+.pairing-card,
+.product-card,
+.sundae-card,
+.cake-card,
+.deal-card,
+.bundle-card,
+.guide-card,
+.occasion-card,
+.package-card,
+.process-card,
+.price-card,
+.cta-card {
+    border: 1px solid var(--border, #ded8dc);
 }
 
 .site-header .nav-list > li > a,

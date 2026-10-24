@@ -682,12 +682,21 @@ summary::-webkit-details-marker {
 
 .occasion-card {
   min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  background: var(--surface);
+}
+
+.occasion-card.reveal {
+  transition: opacity .7s ease, transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
 .occasion-image {
   position: relative;
   overflow: hidden;
-  border-radius: 110px 110px 20px 20px;
 }
 
 .occasion-image img {
@@ -711,7 +720,11 @@ summary::-webkit-details-marker {
 }
 
 .occasion-copy {
-  padding: 26px 5px 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 26px 24px;
 }
 
 .occasion-copy h3 {
@@ -725,6 +738,7 @@ summary::-webkit-details-marker {
 
 .occasion-copy .text-link {
   font-size: .8rem;
+  margin-block-start: auto;
 }
 
 /* 3. PACKAGES */
@@ -745,7 +759,7 @@ summary::-webkit-details-marker {
   background: var(--surface);
   display: flex;
   flex-direction: column;
-  transition: transform .35s, box-shadow .35s;
+  transition: transform .35s, box-shadow .35s, border-color .35s;
 }
 
 .package-card.featured {
@@ -948,7 +962,6 @@ summary::-webkit-details-marker {
 }
 
 .process-grid {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
@@ -957,17 +970,14 @@ summary::-webkit-details-marker {
   list-style: none;
 }
 
-.process-grid::before {
-  content: "";
-  position: absolute;
-  inset-inline: 12%;
-  inset-block-start: 35px;
-  border-block-start: 1px dashed var(--border);
-}
-
 .process-card {
   position: relative;
+  padding: 26px 20px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
   text-align: center;
+  transition: transform .3s, border-color .3s, box-shadow .3s;
 }
 
 .step-number {
@@ -1267,7 +1277,7 @@ summary::-webkit-details-marker {
   inset: 0;
   background:
     linear-gradient(rgb(24 12 20 / 72%), rgb(24 12 20 / 78%)),
-    url("ctapartyorders.jpg") center / cover no-repeat;
+    url("party-cta-background.png") center / cover no-repeat;
 }
 
 .final-panel-centered .final-panel-content {
@@ -1608,12 +1618,25 @@ address,
 }
 
 @media (hover: hover) {
+  .occasion-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+  }
+
   .occasion-card:hover img {
     transform: scale(1.06);
   }
 
+  .process-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+  }
+
   .package-card:hover {
     transform: translateY(-7px);
+    border-color: var(--primary);
     box-shadow: var(--shadow);
   }
 
@@ -1775,10 +1798,6 @@ address,
   .process-grid {
     grid-template-columns: 1fr 1fr;
     gap: 40px 25px;
-  }
-
-  .process-grid::before {
-    display: none;
   }
 
   .spread-grid,

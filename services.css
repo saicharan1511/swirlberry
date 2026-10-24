@@ -152,6 +152,10 @@ summary:focus-visible {
     color: var(--text);
 }
 
+.premium-hero .button-outline {
+    border-color: var(--primary);
+}
+
 .button-outline:hover {
     border-color: var(--secondary);
     background: var(--secondary);
@@ -443,12 +447,13 @@ summary::-webkit-details-marker {
     border: 1px solid var(--border);
     border-radius: 23px;
     background: var(--surface);
-    transition: transform .3s, box-shadow .3s;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
 }
 
 .service-card:hover {
     transform: translateY(-7px);
     box-shadow: var(--shadow);
+    border-color: var(--primary);
 }
 
 .card-image {

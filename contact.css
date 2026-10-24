@@ -505,22 +505,31 @@ summary::-webkit-details-marker {
   );
 }
 
+[data-theme="dark"] .contact-hero .hero-background img {
+  filter: brightness(.95) saturate(.95);
+}
+
+[data-theme="dark"] .contact-hero .hero-background::after {
+  background: linear-gradient(
+    90deg,
+    rgb(12 8 11 / 78%) 0%,
+    rgb(12 8 11 / 56%) 48%,
+    rgb(12 8 11 / 18%) 100%
+  );
+}
+
+[data-theme="dark"][dir="rtl"] .contact-hero .hero-background::after {
+  background: linear-gradient(
+    270deg,
+    rgb(12 8 11 / 78%) 0%,
+    rgb(12 8 11 / 56%) 48%,
+    rgb(12 8 11 / 18%) 100%
+  );
+}
+
 .hero-content {
   position: relative;
   animation: enter .85s ease both;
-}
-
-.hero-breadcrumb {
-  display: flex;
-  gap: 13px;
-  align-items: center;
-  font-size: .78rem;
-  color: #f0dce5;
-  margin-block-end: 38px;
-}
-
-.hero-breadcrumb a:hover {
-  color: #ffb6d0;
 }
 
 .contact-hero .eyebrow {
@@ -1791,10 +1800,6 @@ address a {
       rgb(25 15 21 / 81%),
       rgb(25 15 21 / 72%)
     );
-  }
-
-  .hero-breadcrumb {
-    margin-block-end: 30px;
   }
 
   .contact-hero h1 {

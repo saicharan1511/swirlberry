@@ -214,6 +214,10 @@ svg {
     background: transparent
 }
 
+.hero .button-outline {
+    border-color: var(--primary)
+}
+
 .button-outline:hover {
     background: var(--secondary);
     color: #fff;
@@ -491,15 +495,6 @@ details {
 .hero-visual {
     position: relative;
     padding: 18px
-}
-
-.hero-visual::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 1px solid var(--primary);
-    border-radius: 48% 48% 15% 15%;
-    transform: rotate(6deg)
 }
 
 .hero-visual img {
@@ -828,6 +823,10 @@ details {
     align-self: flex-start
 }
 
+.offer-card .button-outline {
+    border-color: var(--primary)
+}
+
 .offer-card.featured {
     border: 2px solid var(--primary);
     box-shadow: var(--shadow)
@@ -880,6 +879,7 @@ details {
     background: var(--bg-alt);
     border-radius: 22px;
     padding: 30px;
+    transition: border-color .3s;
     display: flex;
     flex-direction: column
 }
@@ -1319,10 +1319,28 @@ address a {
     transform: translateY(0)
 }
 
+.review-card.reveal {
+    transition: opacity .65s ease, transform .65s ease, box-shadow .3s ease, border-color .3s ease
+}
+
 @media(hover:hover) {
 
     .flavor-card:hover,
     .offer-card:hover {
+        transform: translateY(-7px);
+        box-shadow: var(--shadow)
+    }
+
+    .flavor-card:hover {
+        border-color: var(--primary)
+    }
+
+    .offer-card:hover {
+        border-color: var(--primary)
+    }
+
+    .review-card:hover {
+        border-color: var(--primary);
         transform: translateY(-7px);
         box-shadow: var(--shadow)
     }

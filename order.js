@@ -131,7 +131,8 @@
             name: "Berry Daydream",
             price: 140,
             description: "Bright berry notes. One creamy, happy scoop.",
-            photo: "1497034825429-c343d7c6a68f"
+            photo: "1497034825429-c343d7c6a68f",
+            image: "berry-daydream.png"
         },
         {
             name: "Midnight Chocolate",

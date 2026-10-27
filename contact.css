@@ -689,6 +689,43 @@ summary::-webkit-details-marker {
   max-inline-size: 430px;
 }
 
+.message-prompts {
+  margin-block-start: 25px;
+  padding: 20px 22px;
+  border-inline-start: 3px solid var(--primary);
+  background: var(--bg-alt);
+}
+
+.message-prompts h3 {
+  margin-block-end: 10px;
+  font-size: 1rem;
+}
+
+.message-prompts ul {
+  display: grid;
+  gap: 7px;
+  margin-block: 0 12px;
+}
+
+.message-prompts li {
+  position: relative;
+  padding-inline-start: 18px;
+  color: var(--text);
+  font-size: .85rem;
+}
+
+.message-prompts li::before {
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--primary-ink);
+  content: "•";
+}
+
+.message-prompts p {
+  margin: 0;
+  font-size: .78rem;
+}
+
 .message-image {
   position: relative;
   overflow: hidden;
@@ -1032,67 +1069,6 @@ summary::-webkit-details-marker {
 .visit-tips p {
   font-size: .82rem;
   margin: 0;
-}
-
-/* CELEBRATIONS */
-
-.celebration-panel {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  border: 1px solid var(--border);
-  border-radius: 26px;
-  overflow: hidden;
-  background: var(--bg-alt);
-}
-
-.celebration-copy {
-  padding: 60px 45px;
-  align-self: center;
-}
-
-.celebration-copy h2 {
-  font-size: clamp(2.4rem, 3.8vw, 3.8rem);
-}
-
-.occasion-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-block: 25px 30px;
-}
-
-.occasion-tags li {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  padding: 7px 13px;
-  border-radius: 100px;
-  font-size: .72rem;
-}
-
-.celebration-image {
-  position: relative;
-  min-block-size: 550px;
-  overflow: hidden;
-}
-
-.celebration-image img {
-  position: absolute;
-  inset: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  transition: transform .7s;
-}
-
-.celebration-image > span {
-  position: absolute;
-  inset-inline: 24px;
-  inset-block-end: 24px;
-  padding: 17px;
-  border-radius: 13px;
-  text-align: center;
-  color: var(--primary-ink);
-  background: var(--surface);
-  font: italic 1.1rem/1.5 Georgia, serif;
 }
 
 /* QUESTIONS */
@@ -1564,8 +1540,7 @@ address a {
   }
 
   .message-image:hover img,
-  .visit-visual:hover img,
-  .celebration-image:hover img {
+  .visit-visual:hover img {
     transform: scale(1.055);
   }
 }
@@ -1686,14 +1661,6 @@ address a {
 
   .visit-visual img {
     block-size: 620px;
-  }
-
-  .celebration-copy {
-    padding: 38px 28px;
-  }
-
-  .celebration-image {
-    min-block-size: 580px;
   }
 
   .faq-grid {
@@ -1843,7 +1810,6 @@ address a {
   .location-heading,
   .map-layout,
   .visit-grid,
-  .celebration-panel,
   .faq-grid {
     grid-template-columns: 1fr;
   }
@@ -1900,14 +1866,6 @@ address a {
 
   .visit-caption strong {
     font-size: 1.5rem;
-  }
-
-  .celebration-copy {
-    padding: 35px 25px;
-  }
-
-  .celebration-image {
-    min-block-size: 380px;
   }
 
   .faq-intro {

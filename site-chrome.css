@@ -258,6 +258,10 @@ button[hidden] {
     min-width: 0;
 }
 
+.site-footer .footer-brand {
+    text-align: start;
+}
+
 .site-footer .footer-brand>p {
     margin-block: 25px 22px;
     max-inline-size: 360px;
@@ -300,6 +304,7 @@ button[hidden] {
 
 .site-footer .socials {
     display: flex;
+    justify-content: flex-start;
     gap: 14px;
     margin-block-end: 12px;
 }
@@ -690,5 +695,21 @@ button[hidden] {
 
     .site-header .order-button {
         padding: 8px 10px;
+    }
+}
+
+.site-header .header-inner,
+.site-footer > .container {
+    box-sizing: border-box;
+    inline-size: calc(100% - 64px);
+    max-inline-size: 1480px;
+    margin-inline: auto;
+    padding-inline: 0;
+}
+
+@media (max-width: 680px) {
+    .site-header .header-inner,
+    .site-footer > .container {
+        inline-size: calc(100% - 32px);
     }
 }

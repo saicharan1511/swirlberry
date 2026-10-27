@@ -223,6 +223,16 @@ svg {
   transform: translateY(-3px);
 }
 
+.party-hero .button-outline,
+.party-hero .button-outline:hover {
+  border-color: var(--primary);
+}
+
+.section .button,
+.section .button:hover {
+  border-color: var(--primary);
+}
+
 .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -1018,6 +1028,22 @@ summary::-webkit-details-marker {
   min-inline-size: 0;
 }
 
+.enquiry-guidance {
+  margin-block: 25px;
+  padding-inline-start: 18px;
+  border-inline-start: 3px solid var(--primary);
+}
+
+.enquiry-guidance h3 {
+  margin-block-end: 8px;
+  font-size: 1.05rem;
+}
+
+.enquiry-guidance p {
+  margin-block-end: 0;
+  font-size: .9rem;
+}
+
 .enquiry-photo {
   position: relative;
   overflow: hidden;
@@ -1187,6 +1213,40 @@ summary::-webkit-details-marker {
 
 .faq-grid > * {
   min-inline-size: 0;
+}
+
+.faq-prep {
+  margin-block: 26px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.faq-prep h3 {
+  margin-block-end: 14px;
+  font-size: 1rem;
+}
+
+.faq-prep ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.faq-prep li {
+  position: relative;
+  padding-inline-start: 22px;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.faq-prep li::before {
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--primary-ink);
+  content: "✦";
 }
 
 .faq-list {

@@ -157,6 +157,10 @@ svg {
     padding-block: 105px;
 }
 
+.offers-faq-section {
+    padding-block-start: 45px;
+}
+
 .tinted {
     background: var(--bg-alt);
 }
@@ -955,41 +959,100 @@ details {
     margin: 0;
 }
 
-/* Native accessible FAQs */
+/* Offer FAQs */
 
 .faq-layout {
     display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    gap: 80px;
+    gap: 36px;
 }
 
 .faq-intro {
-    position: sticky;
-    inset-block-start: calc(var(--header-height) + 35px);
-    align-self: start;
+    position: static;
+    text-align: center;
+    padding: clamp(28px, 5vw, 52px);
+}
+
+.faq-intro-copy {
+    max-inline-size: 760px;
+    margin-inline: auto;
 }
 
 .faq-intro p {
-    max-inline-size: 370px;
+    max-inline-size: none;
 }
 
-.faq-intro .text-link {
-    font-size: .9rem;
+.faq-intro-copy > p:last-child {
+    max-inline-size: 600px;
+    margin-inline: auto;
+}
+
+.faq-intro .eyebrow {
+    color: var(--primary-ink);
+}
+
+.faq-intro h2 {
+    color: var(--text);
+}
+
+.faq-intro h2 em {
+    color: var(--primary-ink);
+}
+
+.faq-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    counter-reset: offer-faq;
 }
 
 .faq-item {
-    border-block-end: 1px solid var(--border);
+    min-inline-size: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    counter-increment: offer-faq;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.faq-item:last-child {
+    grid-column: 1 / -1;
+}
+
+.faq-item:hover,
+.faq-item[open] {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
 }
 
 .faq-item summary {
-    justify-content: space-between;
-    gap: 25px;
-    padding-block: 24px;
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 24px;
+    align-items: center;
+    gap: 14px;
+    padding: 22px;
     font-weight: 700;
+}
+
+.faq-item summary::before {
+    content: counter(offer-faq, decimal-leading-zero);
+    display: grid;
+    place-items: center;
+    inline-size: 38px;
+    block-size: 38px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+    color: var(--primary-ink);
+    font-size: .72rem;
 }
 
 .faq-item summary::after {
     content: "+";
+    display: grid;
+    place-items: center;
+    inline-size: 24px;
+    block-size: 24px;
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--primary-ink);
@@ -1004,8 +1067,8 @@ details {
     color: var(--primary-ink);
 }
 
-.faq-item>div {
-    padding-inline-end: 35px;
+.faq-item > div {
+    padding: 0 22px 22px 74px;
     animation: enter .3s ease both;
 }
 
@@ -1040,7 +1103,7 @@ details {
     inset: 0;
     background:
         linear-gradient(rgb(24 12 20 / 72%), rgb(24 12 20 / 78%)),
-        url("cta offers.jpg") center / cover no-repeat;
+        url("offers-cta-berries.png") center / cover no-repeat;
 }
 
 .final-panel-centered .final-panel-content {
@@ -1484,6 +1547,10 @@ address a {
         padding-block: 75px;
     }
 
+    .offers-faq-section {
+        padding-block-start: 35px;
+    }
+
     .hero-heading {
         max-inline-size: 700px;
     }
@@ -1538,6 +1605,26 @@ address a {
 
     .faq-layout {
         gap: 35px;
+    }
+
+    .faq-intro {
+        text-align: center;
+    }
+
+    .faq-list {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-item:last-child {
+        grid-column: auto;
+    }
+
+    .faq-item summary {
+        padding: 18px;
+    }
+
+    .faq-item > div {
+        padding-inline-start: 70px;
     }
 
     .footer-grid {
@@ -1615,6 +1702,10 @@ address a {
 
     .section {
         padding-block: 60px;
+    }
+
+    .offers-faq-section {
+        padding-block-start: 30px;
     }
 
     .hero-content {
@@ -1741,7 +1832,7 @@ address a {
     }
 
     .faq-item summary {
-        padding: 22px 0;
+        padding: 18px;
         font-size: .93rem;
     }
 

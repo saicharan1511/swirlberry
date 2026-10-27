@@ -142,7 +142,7 @@ summary:focus-visible {
 }
 
 .button-outline {
-    border-color: var(--border);
+    border-color: var(--primary);
 }
 
 .button-outline:hover {

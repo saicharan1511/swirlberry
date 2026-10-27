@@ -137,7 +137,8 @@
             name: "Midnight Chocolate",
             price: 160,
             description: "Rich cocoa with a beautifully velvety finish.",
-            photo: "1563805042-7684c019e1cb"
+            photo: "1563805042-7684c019e1cb",
+            image: "midnight-chocolate.png"
         },
         {
             name: "Vanilla Cloud",
@@ -150,6 +151,34 @@
             price: 150,
             description: "Silky caramel sweetness in every spoonful.",
             photo: "1517093157656-b9eccef91cb1"
+        },
+        {
+            name: "Mango Sunshine",
+            price: 155,
+            description: "Juicy mango flavor with a bright, creamy finish.",
+            photo: "1560008581-09826d1de69e",
+            image: "mango-sunshine.png"
+        },
+        {
+            name: "Pistachio Picnic",
+            price: 175,
+            description: "A smooth pistachio scoop with a delicate nutty note.",
+            photo: "1501446529957-6226bd447c46",
+            image: "pistachio-picnic.png"
+        },
+        {
+            name: "Cookie Crumble",
+            price: 165,
+            description: "Creamy vanilla folded with crunchy cookie pieces.",
+            photo: "1563805042-7684c019e1cb",
+            image: "cookie-crumble.png"
+        },
+        {
+            name: "Strawberry Cheesecake",
+            price: 180,
+            description: "Sweet strawberry swirls with a cheesecake-inspired finish.",
+            photo: "1497034825429-c343d7c6a68f",
+            image: "strawberry-cheesecake.png"
         }
     ];
 
@@ -177,7 +206,7 @@
             (product, index) => `
         <article class="product">
           <img
-            src="https://images.unsplash.com/photo-${product.photo}?auto=format&fit=crop&w=600&q=80"
+            src="${product.image || `https://images.unsplash.com/photo-${product.photo}?auto=format&fit=crop&w=600&q=80`}"
             alt="${product.name} serving suggestion"
             loading="lazy"
           >

@@ -227,6 +227,16 @@ h1 em {
     gap: 32px;
 }
 
+.catalog,
+.panel {
+    min-inline-size: 0;
+}
+
+.panel {
+    position: sticky;
+    inset-block-start: 24px;
+}
+
 .section-title {
     display: flex;
     justify-content: space-between;
@@ -532,6 +542,10 @@ button {
 @media (max-width: 900px) {
     .layout {
         grid-template-columns: 1fr;
+    }
+
+    .panel {
+        position: static;
     }
 }
 
